@@ -3,11 +3,13 @@ require'nvim-treesitter.configs'.setup {
         "python",
         "regex",
         "lua",
+        "cpp",
         "javascript",
         "bash",
         "toml",
         "rst",
         "html",
+        "css",
         "json",
         "yaml"
     },
@@ -26,7 +28,7 @@ require'nvim-treesitter.configs'.setup {
             ["<leader>fj"] = "@function.outer",
         },
         swap_previous = {
-            ["<leader>fk"] = "@function.outer",
+            ["<leader>fk"] = "@function.inner",
         },
     },
     textobject = {

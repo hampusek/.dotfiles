@@ -3,25 +3,79 @@
 vim.opt.completeopt={"menu", "menuone", "noselect"}
 
 local cmp = require'cmp'
+local ls = require("luasnip")
+require('luasnip.loaders.from_vscode').lazy_load()
+-- /Users/hampusek/auto_docstring/autoDocstring
+require('luasnip/loaders/from_vscode').lazy_load({path = '~/auto_docstring/autoDocstring'})
+
+ls.config.set_config {
+    -- This tells LuaSnip to remember to keep around the last snippet.
+    -- You can jump back into it even if you move outside of the selection
+    history = true,
+
+    -- Update dynamic snippets as you type
+    updateevents = "TextChanged,TextChangedI",
+
+    -- Autosnippets:
+    enable_autosnippets = true,
+
+    -- Crazy highlights!!
+    --ext_opts = {
+    --    [types.choiceNode] = {
+    --        active = {
+    --            virt_text = { { "<--", "Error" }},
+    --        },
+    --    },
+    --},
+}
+
+-- keymaps for lua snips
+-- <c-k> is my expansion key
+-- this will expand the current item or jump to the next item within the snippet.
+vim.keymap.set({ "i", "s" }, "<c-k>", function()
+    if ls.expand_or_jumpable() then
+        ls.expand_or_jump()
+    end
+end, { silent = true })
+
+-- <c-j> jump backwards key e.g. move to previous item within the snippet
+vim.keymap.set({ "i", "s" }, "<c-j>", function()
+    if ls.jumpable(-1) then
+        ls.jump(-1)
+    end
+end, { silent = true })
+
+-- <c-l> selection within a list of options
+vim.keymap.set( "i", "<c-l>", function()
+    if ls.choice_active() then
+        ls.choice_active(1)
+    end
+end)
+
 
 cmp.setup({
-    snippet = {
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-        end,
-    },
     mappings = {
         ['<C-d'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({ select=true }),
+        -- luasnip
+        --['<c-k>'] = cmp.mapping(function(fallback)
+        --    if cmp.visible() then
+        --        cmp.select_next_item()
+
     },
     sources = {
         { name='nvim_lsp' },
         { name='luasnip' },
-        --{ name='buffer' },
-    }
+        { name='buffer' },
+    },
+    snippet = {
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+        end,
+    },
 })
 
 -- setup lspconfig

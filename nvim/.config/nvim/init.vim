@@ -8,12 +8,6 @@ source $HOME/.config/nvim/keys/mappings.vim
 lua require'treesitter'
 lua require'lsp_config'
 
-"source $HOME/.config/nvim/lua/lsp/python-ls.lua
-"source $HOME/.config/nvim/lua/lsp/clangd-ls.lua
-"lua require('lspconfig').clangd.setup{ on_attach=require'completion'.on_attach }
-"lua require('lspconfig').pyright.setup{ on_attach=require'completion'.on_attach }
-"source $HOME/.config/nvim/format.vim
-
 "highlight Normal guibg=non"
 if executable('rg')
     let g:rg_derive_root = 'true'
