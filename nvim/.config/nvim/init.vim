@@ -1,9 +1,8 @@
-"let g:python_host_prog  = '/Users/hampusek/opt/anaconda3/envs/py27/bin/python'
-let g:python3_host_prog = '/Users/hampusek/.local/venv/nvim/bin/python'
+let g:python3_host_prog = '~/.local/venv/nvim/bin/python3'
 
 let mapleader = " "
-source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim
+source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/keys/mappings.vim
 lua require'treesitter'
 lua require'lsp_config'

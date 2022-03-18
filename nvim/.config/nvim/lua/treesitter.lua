@@ -11,7 +11,8 @@ require'nvim-treesitter.configs'.setup {
         "html",
         "css",
         "json",
-        "yaml"
+        "yaml",
+        "comment"
     },
     highlight = {
         enable = true

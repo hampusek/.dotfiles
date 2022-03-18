@@ -31,3 +31,4 @@ set signcolumn=yes
 set colorcolumn=88
 "set signcolumn=yes
 
+hi Normal ctermbg=NONE
