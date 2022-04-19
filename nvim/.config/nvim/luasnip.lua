@@ -3,7 +3,7 @@ if vim.g.snippets ~= "luasnip" then
 end
 
 local ls = require "luasnip"
-local types = require "luasnip-util.types"
+local types = require "luasnip.util.types"
 
 ls.config.set_config {
     -- This tells LuaSnip to remember to keep around the last snippet.

@@ -6,6 +6,7 @@ source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/keys/mappings.vim
 lua require'treesitter'
 lua require'lsp_config'
+"lua require'luasnip'
 
 "highlight Normal guibg=non"
 if executable('rg')

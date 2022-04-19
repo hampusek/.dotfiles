@@ -4,9 +4,8 @@ vim.opt.completeopt={"menu", "menuone", "noselect"}
 
 local cmp = require'cmp'
 local ls = require("luasnip")
+local types = require "luasnip.util.types"
 require('luasnip.loaders.from_vscode').lazy_load()
--- /Users/hampusek/auto_docstring/autoDocstring
-require('luasnip/loaders/from_vscode').lazy_load({path = '~/auto_docstring/autoDocstring'})
 
 ls.config.set_config {
     -- This tells LuaSnip to remember to keep around the last snippet.
@@ -20,13 +19,13 @@ ls.config.set_config {
     enable_autosnippets = true,
 
     -- Crazy highlights!!
-    --ext_opts = {
-    --    [types.choiceNode] = {
-    --        active = {
-    --            virt_text = { { "<--", "Error" }},
-    --        },
-    --    },
-    --},
+    ext_opts = {
+        [types.choiceNode] = {
+            active = {
+                virt_text = { { "<--", "GruvboxOrange" }},
+            },
+        },
+    },
 }
 
 -- keymaps for lua snips
@@ -52,6 +51,17 @@ vim.keymap.set( "i", "<c-l>", function()
     end
 end)
 
+ls.snippets = {
+    all = {
+        -- Available in any filetype
+        ls.parser.parse_snippet("expand", "-- this is what was expanded!")
+    },
+
+    lua = {
+        -- lua specific snippet go here...
+        ls.parser.parse_snippet("lf", "local $1 = function($2)\n $0\nend"),
+    },
+}
 
 cmp.setup({
     mappings = {

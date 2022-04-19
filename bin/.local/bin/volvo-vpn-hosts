@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+# Script that starts vpn-slice with
+# the hostnames/subnets that need to
+# be accessed via the VPN.
+
+vpn-slice --verbose \
+153.112.0.0/16 \
+131.97.0.0/16 \
+10.223.0.0/16 \
+vas-gitlab.ess.volvo.net \
+tidinfo.got.volvo.net \
+esw-artifactory.got.volvo.net \
+confluence.srv.volvo.com \
+configurator.got.volvo.net \
+jira.srv.volvo.com \
+federate.volvo.com \
+eswjenkinsmasterva.got.volvo.net \
+vashare1.ess.volvo.net \
+esw-artifactory-qa.got.volvo.net \
+vas-gitlab.ess.volvo.net \
+origo.volvo.net \
+segotl2322.got.volvo.net \
+vcn.ds.volvo.net \
+origo.volvo.net \
+streamlit-dev.ess.volvo.net \
+jupyter.ess.volvo.net \
+faoros.volvo.com \
+q1-c005.ess.volvo.net \
+q1-i001.ess.volvo.net \
+segotxl454-s.ess.volvo.net \
+streamlit-dev.ess.volvo.net \
+dez-lda.volvo.net \
+origo.volvo.net \
+segotl2322.got.volvo.net \
+segotx1103.vcn.ds.volvo.net \
+segotl3126.got.volvo.net \
+131.97.140.164 \
+segotnl451.vcn.ds.volvo.net \
+131.97.154.109 \
+segotxl608.ess.volvo.net
