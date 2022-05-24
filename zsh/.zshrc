@@ -13,6 +13,11 @@ export CERTIFICATE_PATH=/etc/ssl/certs
 #alias volvovpn="sudo openconnect --protocol=nc -u a392673 --authgroup=SMS-OTP -s $VOLVO_VPN --no-dtls scs-emea.volvo.com"
 alias volvovpn="sudo openconnect --protocol=nc -u a392673 --authgroup=SMS-OTP -s /mnt/home/a392673/.local/bin/volvo-vpn-hosts --no-dtls scs-emea.volvo.com"
 
+# lynx
+alias '?'=duck
+alias '??'=google
+alias '???'=bing
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

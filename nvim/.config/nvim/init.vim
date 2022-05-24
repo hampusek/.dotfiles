@@ -4,6 +4,7 @@ let mapleader = " "
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/keys/mappings.vim
+source $HOME/.config/nvim/keys/harpoon.vim
 lua require'treesitter'
 lua require'lsp_config'
 "lua require'luasnip'
