@@ -1,0 +1,30 @@
+#!/usr/bin/env zsh
+
+_VENV_PATH="$1/venv"
+base_path="$1"
+python file="$2"
+ 
+
+if [[ -n "$VIRTUAL_ENV" ]]; then
+    if [[ "$VIRTUAL_ENV" != $_VENV_PATH ]]; then
+        deactivate
+    fi
+fi
+
+if [[ -z "$VIRTUAL_ENV" ]]; then
+    if [[ -e "$_VENV_PATH" ]]; then
+        echo "activate venv: $_VENV_PATH/bin/activate"
+        activate_venv $_VENV_PATH/bin/activate
+    elif [[ -f "$base_path/requirements.txt" ]]; then
+        python -m venv venv
+        activate_venv $_VENV_PATH/bin/activate
+fi
+
+
+
+if [[ -e "$python_file" ]]; then
+    python "$python_file" 
+
+
+# TODO: remake this so that a new tmux window will be opened and running the current
+# buffer if its a python file

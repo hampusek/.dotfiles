@@ -21,3 +21,5 @@ let g:netrw_winsize = 25
 
 let g:ctrlp_use_caching = 0
 
+
+nnoremap <leader>, :lua require("hampus.git-worktree").execute(vim.loop.cwd(), vim.api.nvim_buf_get_name(0))<CR>
