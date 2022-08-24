@@ -22,6 +22,7 @@ return require("packer").startup(function()
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/nvim-cmp")
     --use("tzachar/cmp-tabnine", { run = "./install.sh" })
+    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
     use("onsails/lspkind-nvim")
     use("glepnir/lspsaga.nvim")
     use("simrat39/symbols-outline.nvim")

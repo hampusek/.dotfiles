@@ -56,18 +56,21 @@ end)
 
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
-        ['<C-d'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-u'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm({ select=true }),
+        ['<C-y>'] = cmp.mapping.confirm({ select=true }),
         -- luasnip
-        --['<c-k>'] = cmp.mapping(function(fallback)
-        --    if cmp.visible() then
-        --        cmp.select_next_item()
+        ['<c-k>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            end
+        end)
 
     }),
     sources = {
+        { name = "cmp_tabnine" },
         { name='nvim_lsp' },
         { name='luasnip' },
         { name='buffer' },
@@ -77,6 +80,15 @@ cmp.setup({
             require('luasnip').lsp_expand(args.body)
         end,
     },
+})
+
+local tabnine = require("cmp_tabnine.config")
+tabnine:setup({
+	max_lines = 1000,
+	max_num_results = 20,
+	sort = true,
+	run_on_every_keystroke = true,
+	snippet_placeholder = "..",
 })
 
 local function config(_config)
