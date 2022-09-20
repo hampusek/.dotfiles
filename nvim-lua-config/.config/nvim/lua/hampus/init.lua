@@ -4,8 +4,8 @@ TheGroupe = augroup("TheGroup", {clear = true})
 require("hampus.set")
 
 require("hampus.packer")
-require("hampus.neogit")
---require("hampus.treesitter")
+require("hampus.debugger")
+-- require("hampus.neogit")
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -16,7 +16,7 @@ autocmd('TextYankPost', {
     callback = function()
         vim.highlight.on_yank({
             higroup = 'IncSearch',
-            timeout = 40,
+            timeout = 70,
         })
     end,
 })
@@ -31,5 +31,4 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
-require("hampus.debugger")
 

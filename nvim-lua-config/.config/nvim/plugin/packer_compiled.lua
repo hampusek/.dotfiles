@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/mnt/home/a392673/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
   },
-  neogit = {
-    loaded = true,
-    path = "/mnt/home/a392673/.local/share/nvim/site/pack/packer/start/neogit",
-    url = "https://github.com/TimUntersberger/neogit"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/mnt/home/a392673/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -203,6 +198,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/mnt/home/a392673/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/mnt/home/a392673/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   }
 }
 

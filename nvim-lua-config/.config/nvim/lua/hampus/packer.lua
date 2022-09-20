@@ -2,7 +2,8 @@ return require("packer").startup(function()
     use("wbthomason/packer.nvim")
 
     -- Git stuff
-    use("TimUntersberger/neogit")
+    -- use("TimUntersberger/neogit")
+    use("tpope/vim-fugitive")
 
     -- TJ
     use("nvim-lua/popup.nvim")
@@ -10,18 +11,12 @@ return require("packer").startup(function()
         "nvim-telescope/telescope.nvim",
         requires = { {"nvim-lua/plenary.nvim"} }
     }
-    --[[use {
-        "nvim-telescope/telescope-fzy-native.nvim",
-        cmd = "make"
-    }
-    ]]
 
     -- All the things
     use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/nvim-cmp")
-    --use("tzachar/cmp-tabnine", { run = "./install.sh" })
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
     use("onsails/lspkind-nvim")
     use("glepnir/lspsaga.nvim")

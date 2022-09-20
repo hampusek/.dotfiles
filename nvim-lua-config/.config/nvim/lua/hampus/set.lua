@@ -3,8 +3,8 @@ vim.opt.relativenumber = true
 vim.opt.hlsearch = false
 vim.opt.hidden = true
 vim.opt.errorbells = false
-vim.opt.tabstop = 4 
-vim.opt.softtabstop = 4 
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
@@ -19,6 +19,8 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
+vim.opt.spell = True
+vim.opt.spelllang = "en_us"
 
 -- Give more space for displaying messages.
 vim.opt.cmdheight = 1
