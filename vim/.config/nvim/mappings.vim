@@ -43,15 +43,3 @@ vnoremap K :m '>-2<CR>gv=gv
 vnoremap < <gv
 vnoremap > >gv
 
-
-" Find files using Telescope
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
-nnoremap <Leader>gd :lua require('telescope.builtin').lsp_definitions()<cr>
-
-
-nnoremap <leader>nf <cmd>lua require('telescope.builtin').find_files{cwd = '~/.config/nvim'}<cr>
-nnoremap <leader>ng <cmd>lua require('telescope.builtin').live_grep{cwd = '~/.config/nvim'}<cr>
