@@ -7,13 +7,6 @@ export ZSH="$HOME/.oh-my-zsh"
 alias python="python3"
 alias vim="nvim"
 
-export EPA_API_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwcm9kX3NlcnZpY2VzIiwiaGVyZV9hcGlfa2V5IjoiWFVyTTFxYWtaMnN2dTNJTE9IWjRJbDJTRk9uWHg3S2diNWxKczBBTkdJVSIsImV4cCI6MjUzNDAyMzAwNzk5fQ.KsdmIUJAH1DwqSKAdd445UAlNxXkvi1UDtJTmcJIZn0"
-
-export CERTIFICATE_PATH=/etc/ssl/certs
-
-alias volvovpn="sudo openconnect --protocol=nc -u a392673 --authgroup=SMS-OTP -s /mnt/home/a392673/.config/vpn/volvo-vpn-hosts --no-dtls scs-emea.volvo.com"
-#alias volvovpn="sudo openconnect --protocol=nc -u a392673 --authgroup=ECS-SMS-OTP -s /mnt/home/a392673/.config/vpn/volvo-vpn-hosts --no-dtls ecs-emea.volvo.com"
-
 # lynx
 alias '?'=duck
 alias '??'=google

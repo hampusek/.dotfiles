@@ -1,0 +1,3 @@
+[submodule "volvo-stuff"]
+	path = volvo-stuff
+	url = git@esw-github.33858.volvo.net:a392673/dotfiles.git
