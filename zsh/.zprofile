@@ -1,1 +1,0 @@
-../volvo-stuff/zsh/.zprofile

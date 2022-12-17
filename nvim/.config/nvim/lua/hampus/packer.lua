@@ -14,17 +14,22 @@ return require("packer").startup(function()
 
     -- All the things
     use("neovim/nvim-lspconfig")
-    use("hrsh7th/cmp-nvim-lsp")
-    use("hrsh7th/cmp-buffer")
-    use("hrsh7th/nvim-cmp")
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = {"hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip"}
+    }
+    use("rafamadriz/friendly-snippets")
+
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
     use("onsails/lspkind-nvim")
     use("glepnir/lspsaga.nvim")
     use("simrat39/symbols-outline.nvim")
-    use("L3MON4D3/LuaSnip")
-    use("saadparwaiz1/cmp_luasnip")
-    use("rafamadriz/friendly-snippets")
     -- use("jremmen/vim-ripgrep")
+
+    -- status line
+    use {
+      'lewis6991/gitsigns.nvim',
+    }
 
     -- Prime
     use("ThePrimeagen/git-worktree.nvim")
