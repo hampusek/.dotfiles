@@ -1,18 +1,38 @@
 return require("packer").startup(function()
     use("wbthomason/packer.nvim")
 
-    -- Git stuff
-    -- use("TimUntersberger/neogit")
-    use("tpope/vim-fugitive")
+    use("mbbill/undotree")
 
     -- TJ
-    use("nvim-lua/popup.nvim")
     use {
         "nvim-telescope/telescope.nvim",
         requires = { {"nvim-lua/plenary.nvim"} }
     }
 
-    -- All the things
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+    })
+
+    -- Git stuff
+    use("tpope/vim-fugitive")
+    use('lewis6991/gitsigns.nvim')
+    if vim.fn.executable "gh" == 1 then
+        use {
+            "pwntester/octo.nvim",
+            requires = {
+                'nvim-lua/plenary.nvim',
+                'nvim-telescope/telescope.nvim',
+                'kyazdani42/nvim-web-devicons',
+            },
+            config = function ()
+                require"octo".setup()
+            end
+        }
+    end
+
+
+    -- LSP
     use("neovim/nvim-lspconfig")
     use {
         "hrsh7th/nvim-cmp",
@@ -24,22 +44,13 @@ return require("packer").startup(function()
     use("onsails/lspkind-nvim")
     use("glepnir/lspsaga.nvim")
     use("simrat39/symbols-outline.nvim")
-    -- use("jremmen/vim-ripgrep")
 
-    -- status line
-    use {
-      'lewis6991/gitsigns.nvim',
-    }
+    use("folke/zen-mode.nvim")
 
     -- Prime
     use("ThePrimeagen/git-worktree.nvim")
     use("ThePrimeagen/harpoon")
 
-    use("mbbill/undotree")
-
-    -- Colorscheme section
-    use("gruvbox-community/gruvbox")
-    use("folke/tokyonight.nvim")
 
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
@@ -47,6 +58,7 @@ return require("packer").startup(function()
 
     use("nvim-treesitter/playground")
     use("romgrk/nvim-treesitter-context")
+
     use("mfussenegger/nvim-dap")
     use("rcarriga/nvim-dap-ui")
     use("theHamsta/nvim-dap-virtual-text")
