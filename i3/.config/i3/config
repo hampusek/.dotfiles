@@ -230,7 +230,7 @@ exec_always --no-startup-id "feh --no-fehbg --bg-scale ~/Pictures/mohammad-aliza
 
 
 # compton
-exec_always --no-startup-id "killall -q compton; compton -b --logpath /mnt/home/a392673/.cache/compton/comton.log --config /mnt/home/a392673/.config/compton.conf"
+exec_always --no-startup-id "killall -q compton; picom --config ~/.config/picom/config"
 
 # floating window for python plots
 for_window [class="Matplotlib"] floating enable
