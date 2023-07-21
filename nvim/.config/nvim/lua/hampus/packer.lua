@@ -41,9 +41,11 @@ return require("packer").startup(function()
     use("rafamadriz/friendly-snippets")
 
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
-    use("onsails/lspkind-nvim")
-    use("glepnir/lspsaga.nvim")
-    use("simrat39/symbols-outline.nvim")
+    --use("glepnir/lspsaga.nvim")
+    --use("simrat39/symbols-outline.nvim")
+
+    -- java
+    -- use('mfussenegger/nvim-jdtls')
 
     use("folke/zen-mode.nvim")
 
@@ -62,6 +64,12 @@ return require("packer").startup(function()
     use("mfussenegger/nvim-dap")
     use("rcarriga/nvim-dap-ui")
     use("theHamsta/nvim-dap-virtual-text")
+
+    -- markdown
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
 
 end)

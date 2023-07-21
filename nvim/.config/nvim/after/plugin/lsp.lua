@@ -117,6 +117,8 @@ require("lspconfig").clangd.setup(config())
 -- gopls
 require("lspconfig").gopls.setup(config())
 
+require("lspconfig")['rust_analyzer'].setup(config(), {settings={ ["rust-analyzer"] = {} }})
+
 
 ls.snippets = {
     all = {

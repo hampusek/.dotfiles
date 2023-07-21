@@ -12,12 +12,18 @@ alias '?'=duck
 alias '??'=google
 alias '???'=bing
 
+alias mdsl="sudo sshfs -o allow_other -o ProxyJump=$USER@q1-i001.ess.volvo.net $USER@q1-c017.ess.volvo.net:/mnt/proj /mnt/proj"
+alias udsl="sudo umount /mnt/proj"
+alias dsl-home="cd /mnt/proj/emob-da1/emob-product-services/hampus"
+# probplems with unmounting?
+# Use: "lsof +f -- /mnt/proj" to see what process is blocking
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-alias volvovpn="sudo openconnect --protocol=nc -u a392673 --authgroup=SMS-OTP -s /mnt/home/a392673/.config/vpn/volvo-vpn-hosts --no-dtls scs-emea.volvo.com"
+alias volvovpn="sudo openconnect --protocol=nc -u $USER --authgroup=SMS-OTP -s /mnt/home/$USER/.config/vpn/volvo-vpn-hosts --no-dtls scs-emea.volvo.com"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -108,3 +114,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/mnt/home/$USER/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/mnt/home/$USER/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/mnt/home/$USER/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/mnt/home/$USER/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
