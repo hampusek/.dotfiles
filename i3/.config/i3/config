@@ -241,4 +241,4 @@ bindsym Control+$mod+l exec "i3lock -c 000000"
 
 # auto lock the screen
 exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
-exec "setxkbmap -option 'grp:caps_toggle' -layout us,se"
+exec "setxkbmap -option 'grp:caps_toggle' -layout se,us"
