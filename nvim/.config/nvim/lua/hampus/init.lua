@@ -3,9 +3,8 @@ TheGroupe = augroup("TheGroup", {clear = true})
 
 require("hampus.set")
 
-require("hampus.packer")
+require("hampus.lazy")
 require("hampus.debugger")
--- require("hampus.neogit")
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})

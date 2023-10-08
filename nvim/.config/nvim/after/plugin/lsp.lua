@@ -5,9 +5,11 @@ local inoremap = Remap.inoremap
 
 vim.opt.completeopt={"menu", "menuone", "noselect"}
 
+local lspconfig = require("lspconfig")
 local cmp = require("cmp")
 local ls = require("luasnip")
 local types = require("luasnip.util.types")
+local tabnine = require("cmp_tabnine.config")
 require('luasnip.loaders.from_vscode').lazy_load()
 
 ls.config.set_config {
@@ -82,7 +84,6 @@ cmp.setup({
     },
 })
 
-local tabnine = require("cmp_tabnine.config")
 tabnine:setup({
 	max_lines = 1000,
 	max_num_results = 20,
@@ -111,13 +112,13 @@ end
 
 
 -- setup lspconfig
-require("lspconfig").pyright.setup(config())
+lspconfig.pyright.setup(config())
 -- clangd
-require("lspconfig").clangd.setup(config())
+lspconfig.clangd.setup(config())
 -- gopls
-require("lspconfig").gopls.setup(config())
+lspconfig.gopls.setup(config())
 
-require("lspconfig")['rust_analyzer'].setup(config(), {settings={ ["rust-analyzer"] = {} }})
+lspconfig.rust_analyzer.setup(config(), {settings={ ["rust-analyzer"] = {} }})
 
 
 ls.snippets = {
