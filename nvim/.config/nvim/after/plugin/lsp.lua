@@ -112,7 +112,11 @@ end
 
 
 -- setup lspconfig
-lspconfig.pyright.setup(config())
+-- Had problems with slow startuptime using pyright...
+--
+-- lspconfig.pyright.setup(config())
+
+lspconfig.jedi_language_server.setup(config())
 -- clangd
 lspconfig.clangd.setup(config())
 -- gopls
