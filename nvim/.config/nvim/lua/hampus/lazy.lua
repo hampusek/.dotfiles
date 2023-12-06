@@ -57,6 +57,9 @@ local packages = {
         build = function() vim.fn["mkdp#util#install"]() end,
     },
 
+    -- LLMs
+    "David-Kunz/gen.nvim"
+
 }
 
 local options = {}
