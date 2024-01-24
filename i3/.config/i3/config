@@ -50,6 +50,9 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Focus last floating/tiling container
+bindsym $mod+g focus mode_toggle
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down

@@ -25,6 +25,10 @@ alias dsl-home="cd /mnt/proj/emob-da1/emob-product-services/hampus"
 ZSH_THEME="robbyrussell"
 alias volvovpn="sudo openconnect --protocol=nc -u $USER --authgroup=SMS-OTP -s /mnt/home/$USER/.config/vpn/volvo-vpn-hosts --no-dtls scs-emea.volvo.com"
 
+
+#alias zet='cd /mnt/home/a392673/personal/notes/; \
+#    nvim -o "$(rg --files -g '!archive/' $zet | fzf)"'
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
