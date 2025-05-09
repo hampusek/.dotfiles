@@ -12,7 +12,9 @@ require("nvim-treesitter.configs").setup {
         "css",
         "json",
         "yaml",
-        "comment"
+        "comment",
+        "go",
+        "templ"
     },
     highlight = {
         enable = true
@@ -55,3 +57,9 @@ require("nvim-treesitter.configs").setup {
         },
     },
 }
+
+vim.filetype.add({
+    extension = {
+        templ = "templ",
+    },
+})

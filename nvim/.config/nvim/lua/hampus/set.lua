@@ -21,6 +21,9 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.spell = True
 vim.opt.spelllang = "en_us"
+vim.opt.conceallevel = 2
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Give more space for displaying messages.
 vim.opt.cmdheight = 1

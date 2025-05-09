@@ -44,3 +44,11 @@ nnoremap("<leader>j", "<cmd>lprev<CR>zz")
 
 nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+
+-- tmux send line/highlight to pane
+-- mainly used for REPL stuff like ipython
+
+vim.api.nvim_set_keymap('n', '<leader>l', ':lua LineToTmux("right")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>l', ':lua SelectionToTmux("right")<CR>', { noremap = true, silent = true })
+

@@ -30,6 +30,7 @@ local packages = {
     -- Git stuff
     "tpope/vim-fugitive",
     "lewis6991/gitsigns.nvim",
+    "sindrets/diffview.nvim",
     -- LSP
     "neovim/nvim-lspconfig",
     {
@@ -53,7 +54,10 @@ local packages = {
     "nvim-treesitter/playground",
     "romgrk/nvim-treesitter-context",
     "mfussenegger/nvim-dap",
-    "rcarriga/nvim-dap-ui",
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {"nvim-neotest/nvim-nio"}
+    },
     "theHamsta/nvim-dap-virtual-text",
     -- markdown
     {
@@ -62,7 +66,7 @@ local packages = {
     },
 
     -- LLMs
-    "David-Kunz/gen.nvim"
+    "David-Kunz/gen.nvim",
 
 }
 

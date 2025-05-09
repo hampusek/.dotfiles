@@ -46,7 +46,7 @@ inactive-opacity-override = false;
 detect-client-opacity = true;
 
 opacity-rule = [
-"85:class_g *?= 'gnome-terminal'"
+#"85:class_g *?= 'gnome-terminal'"
 ];
 # inactive-dim-fixed = true;
 # blur-background = true;
